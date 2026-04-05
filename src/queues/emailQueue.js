@@ -1,7 +1,7 @@
-import { Queue } from "bullmq";
-import connection from "../config/bullmq-connection.js";
+const { Queue } = require("bullmq");
+const connection = require("../config/bullmq-connection");
 
-export const emailQueue = new Queue("email-queue", {
+const emailQueue = new Queue("email-queue", {
   connection,
   defaultJobOptions: {
     attempts: 3,
@@ -13,3 +13,5 @@ export const emailQueue = new Queue("email-queue", {
     removeOnFail: false,
   },
 });
+
+module.exports = { emailQueue };

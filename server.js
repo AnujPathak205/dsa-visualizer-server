@@ -8,6 +8,8 @@ const authRoutes = require("./src/routes/user.routes")
 const app = express();
 connectDB();
 
+require("./src/workers/emailWorker")
+
 app.use(cors({
   origin: process.env.CLIENT_BASE_URL,
   methods: ["GET", "POST", "PUT", "DELETE"],
