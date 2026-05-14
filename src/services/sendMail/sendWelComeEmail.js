@@ -14,9 +14,7 @@ export async function sendWelcomeEmail({ email, name, role }) {
       ? `Seller Account Activated – ${APP_NAME}`
       : `Account Activated – ${APP_NAME}`
 
-    const dashboardLink = isSeller
-      ? SELLER_DASHBOARD_URL
-      : FRONTEND_URL
+    const dashboardLink = isSeller ? SELLER_DASHBOARD_URL : FRONTEND_URL
 
     const accountTypeText = isSeller
       ? "Your seller account has been successfully activated."
@@ -82,17 +80,11 @@ This is an automated account notification.
       },
     })
 
-    console.log(
-      `${APP_NAME} ACCOUNT ACTIVATION EMAIL SENT (${role}):`,
-      response.data.messageId
-    )
+    console.log(`${APP_NAME} ACCOUNT ACTIVATION EMAIL SENT (${role}):`, response.data.messageId)
 
     return response.data
   } catch (error) {
-    console.error(
-      `${APP_NAME} Welcome email failed:`,
-      error.response?.data || error.message
-    )
+    console.error(`${APP_NAME} Welcome email failed:`, error.response?.data || error.message)
     throw error
   }
 }
