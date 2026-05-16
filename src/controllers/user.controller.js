@@ -104,7 +104,7 @@ const loginController = async (req, res) => {
   }
 }
 
-const verifyEmail = async (req, res) => {
+const verifyEmailController = async (req, res) => {
   try {
     const { email, otp } = req.body
 
@@ -162,4 +162,4 @@ const verifyEmail = async (req, res) => {
   }
 }
 
-module.exports = { registerController, loginController }
+module.exports = { registerController, loginController,verifyEmailController }
