@@ -106,7 +106,9 @@ const loginController = async (req, res) => {
 
 const verifyEmailController = async (req, res) => {
   try {
-    const { email, otp } = req.body
+    const { email, otp } = req.body;
+    console.log(email.otp);
+    
 
     const tempUser = await TempUserModel.findOne({ email })
 
@@ -119,7 +121,7 @@ const verifyEmailController = async (req, res) => {
       return res.status(400).json({ message: "OTP expired" })
     }
 
-    if (tempUser.otp !== otp) {
+    if (tempUser.otp != otp) {
       return res.status(400).json({ message: "Invalid OTP" })
     }
 
