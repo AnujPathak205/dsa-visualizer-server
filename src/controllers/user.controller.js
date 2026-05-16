@@ -34,7 +34,7 @@ const registerController = async (req, res) => {
 
     await emailQueue.add("verify-email", {
       email,
-      username,
+      username:userName,
       otp,
       otpExpiry,
     })
