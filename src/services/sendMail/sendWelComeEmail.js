@@ -3,7 +3,7 @@ import axios from "axios"
 const BREVO_URL = "https://api.brevo.com/v3/smtp/email"
 const BREVO_API_KEY = process.env.BREVO_API_KEY
 
-const APP_NAME = "ShopMaster"
+const APP_NAME = "DSA-Visualizer"
 const FRONTEND_URL = "https://dsa-visualizer-client.vercel.app/"
 
 export async function sendWelcomeEmail({ email, name, role }) {
