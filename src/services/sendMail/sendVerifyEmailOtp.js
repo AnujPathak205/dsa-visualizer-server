@@ -3,7 +3,7 @@ import axios from "axios"
 const BREVO_API_KEY = process.env.BREVO_API_KEY
 const BREVO_URL = "https://api.brevo.com/v3/smtp/email"
 
-const APP_NAME = "ShopMaster"
+const APP_NAME = "DSA-Visualizer"
 
 export async function sendVerifyEmailOtp({ email, username, otp, otpExpiry }) {
   try {
